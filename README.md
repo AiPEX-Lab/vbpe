@@ -28,6 +28,14 @@ The ground truth mean heart rate for each video is provided in the respective '.
 
 # Running the scripts
 
+Please clone/download the repository. The repository contains the required folder structure. 
+Place the input `.mp4` videos into the `Input_Videos` folder. Place the input full length photos into the `Input_Photos` folder. Place the input demographic data in the folder `Input_Data`. 
+
+
+Details of each of the python scripts in the repository are as follows: 
+
+1. The script `main.py` runs all the other scripts in the correct order. 
+
 The results of the heart rate obtained using 5 rPPG approaches - CHROM [[1]](https://iopscience.iop.org/article/10.1088/0967-3334/35/9/1913), BKF [[2]](https://www.osapublishing.org/boe/fulltext.cfm?uri=boe-9-2-873&id=381227), Spherical Mean [[3]](https://ieeexplore.ieee.org/document/9022571), DeepPhys [[4]](https://arxiv.org/abs/1805.07888) and POS [[5]](https://ieeexplore.ieee.org/document/7565547), have been tabulated in the file 'Results_Final_Main.csv'. 
 The python script 'HypoTest_Results_p.py' provides hypothesis test results (p-values) obtained for the hypothesis tests detailed in the paper. 
 The python script 'blandaltman.py' provides the Bland Altman plots for the results obtained using rPPG approaches, as compared to the results obtained using the ground truth Masimo device 
