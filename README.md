@@ -35,9 +35,9 @@ Please us the following command to perform blood pressure estimation on all the 
 Details of each of the python scripts in the repository are as follows: 
 
 1. The `main.py` script calls the required scripts in the right order to perform blood pressure estimation on all the videos in the `Input_Videos` folder.
-2. The `face_handds.py` script utilizes Google Mediapipe to identify facial and hand landmarks (as shown in the figure above) in the input video and crops the facial region and the hand region. The two cropped regions are saved in the `./Results/MP_Videos` folder.
+2. The `face_hands.py` script utilizes Google Mediapipe to identify facial and hand landmarks (as shown in the figure above) in the input video and crops the facial region and the hand region. The two cropped regions are saved in the `./Results/MP_Videos` folder.
 3. The `convert_video.py` script converts the outputs of Mediapipe into `mp4` format, suitable for further analysis and saves the outputs into the `./Results/MP_Videos_MP4` folder.
-4. The `can2ddshare.py` script performs extraction of the photoplethysmograph (PPG) signals and saves them separately for the face and hand regions into the `./Results/PPG` foldder.
+4. The `can2dshare.py` script performs extraction of the photoplethysmograph (PPG) signals and saves them separately for the face and hand regions into the `./Results/PPG` foldder.
 5. The `bp_calc.py` script performs computation of systolic blood pressure (SBP) utilizing the PPG signals extracted previously.
 6. The `dbp.py` script performs computation of diastolic blood pressure (DBP) utilizing the PPG signals extracted previously.
 
