@@ -17,6 +17,7 @@ In summary, the contributions of the work are:
 # Dataset
 
 Please download the dataset utilized for the current study [here]().
+
 The `Input_Videos` folder contains the video data utilized for the current study. The `Input_Photos` folder contains the subject full length images utilized for the current study. The input videos must be in the format shown below. The ground truth data is provided in the `Demographic_Data.csv` file. 
 
 ![alt text](https://github.com/AiPEX-Lab/vbpe/blob/main/Fig2.png)
@@ -27,6 +28,7 @@ Please clone/download the repository. The repository contains the required folde
 Place the input `.mp4` videos into the `Input_Videos` folder. Place the input full length photos into the `Input_Photos` folder. Place the input demographic data in the folder `Input_Data`, as shown in the `csv` file provided. 
 
 Please us the following command to perform blood pressure estimation on all the videos in the `Input_Videos` folder. 
+
 ```python main.py```
 
 
