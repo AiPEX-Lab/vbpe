@@ -16,9 +16,10 @@ In summary, the contributions of the work are:
 
 # Dataset
 
-The `Input_Videos` folder contains the video data utilized for the current study. The `Input_Photos` folder contains the subject full length images utilized for the current study. 
+Please download the dataset utilized for the current study [here]().
+The `Input_Videos` folder contains the video data utilized for the current study. The `Input_Photos` folder contains the subject full length images utilized for the current study. The input videos must be in the format shown below. The ground truth data is provided in the `Demographic_Data.csv` file. 
 
-![alt text](https://github.com/AiPEX-Lab/rppg_biases/blob/main/Fig.jpg?raw=true)
+![alt text](https://github.com/AiPEX-Lab/vbpe/blob/main/Fig2.png)
 
 # Running the scripts
 
@@ -32,7 +33,7 @@ Please us the following command to perform blood pressure estimation on all the 
 Details of each of the python scripts in the repository are as follows: 
 
 1. The `main.py` script calls the required scripts in the right order to perform blood pressure estimation on all the videos in the `Input_Videos` folder.
-2. The `face_handds.py` script utilizes Google Mediapipe to identify facial and hand landmarks in the input video and crops the facial region and the hand region. The two cropped regions are saved in the `./Results/MP_Videos` folder.
+2. The `face_handds.py` script utilizes Google Mediapipe to identify facial and hand landmarks (as shown in the figure above) in the input video and crops the facial region and the hand region. The two cropped regions are saved in the `./Results/MP_Videos` folder.
 3. The `convert_video.py` script converts the outputs of Mediapipe into `mp4` format, suitable for further analysis and saves the outputs into the `./Results/MP_Videos_MP4` folder.
 4. The `can2ddshare.py` script performs extraction of the photoplethysmograph (PPG) signals and saves them separately for the face and hand regions into the `./Results/PPG` foldder.
 5. The `bp_calc.py` script performs computation of systolic blood pressure (SBP) utilizing the PPG signals extracted previously.
@@ -40,13 +41,6 @@ Details of each of the python scripts in the repository are as follows:
 
 The final SBP and DBP predictions are saved into `./SBP_new.csv` and `./DBP_new.csv` respectively.
 
-
-
-The results of the heart rate obtained using 5 rPPG approaches - CHROM [[1]](https://iopscience.iop.org/article/10.1088/0967-3334/35/9/1913), BKF [[2]](https://www.osapublishing.org/boe/fulltext.cfm?uri=boe-9-2-873&id=381227), Spherical Mean [[3]](https://ieeexplore.ieee.org/document/9022571), DeepPhys [[4]](https://arxiv.org/abs/1805.07888) and POS [[5]](https://ieeexplore.ieee.org/document/7565547), have been tabulated in the file 'Results_Final_Main.csv'. 
-The python script 'HypoTest_Results_p.py' provides hypothesis test results (p-values) obtained for the hypothesis tests detailed in the paper. 
-The python script 'blandaltman.py' provides the Bland Altman plots for the results obtained using rPPG approaches, as compared to the results obtained using the ground truth Masimo device 
-
 # Citation
 If you use any of the data or resources provided on this page in any of your publications we ask you to cite the following work.
 
-Dasari, A., Prakash, S. K. A., Jeni, L. A., & Tucker, C. S. (2021). Evaluation of biases in remote photoplethysmography methods. NPJ digital medicine, 4(1), 1-13. https://doi.org/10.1038/s41746-021-00462-z
