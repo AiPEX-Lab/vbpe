@@ -29,12 +29,24 @@ The ground truth mean heart rate for each video is provided in the respective '.
 # Running the scripts
 
 Please clone/download the repository. The repository contains the required folder structure. 
-Place the input `.mp4` videos into the `Input_Videos` folder. Place the input full length photos into the `Input_Photos` folder. Place the input demographic data in the folder `Input_Data`. 
+Place the input `.mp4` videos into the `Input_Videos` folder. Place the input full length photos into the `Input_Photos` folder. Place the input demographic data in the folder `Input_Data`, as shown in the `csv` file provided. 
+
+Please us the following command to perform blood pressure estimation on all the videos in the `Input_Videos` folder. 
+```python main.py```
 
 
 Details of each of the python scripts in the repository are as follows: 
 
-1. The script `main.py` runs all the other scripts in the correct order. 
+1. The `main.py` script calls the required scripts in the right order to perform blood pressure estimation on all the videos in the `Input_Videos` folder.
+2. The `face_handds.py` script utilizes Google Mediapipe to identify facial and hand landmarks in the input video and crops the facial region and the hand region. The two cropped regions are saved in the `./Results/MP_Videos` folder.
+3. The `convert_video.py` script converts the outputs of Mediapipe into `mp4` format, suitable for further analysis and saves the outputs into the `./Results/MP_Videos_MP4` folder.
+4. The `can2ddshare.py` script performs extraction of the photoplethysmograph (PPG) signals and saves them separately for the face and hand regions into the `./Results/PPG` foldder.
+5. The `bp_calc.py` script performs computation of systolic blood pressure (SBP) utilizing the PPG signals extracted previously.
+6. The `dbp.py` script performs computation of diastolic blood pressure (DBP) utilizing the PPG signals extracted previously.
+
+The final SBP and DBP predictions are saved into `./SBP_new.csv` and `./DBP_new.csv` respectively.
+
+
 
 The results of the heart rate obtained using 5 rPPG approaches - CHROM [[1]](https://iopscience.iop.org/article/10.1088/0967-3334/35/9/1913), BKF [[2]](https://www.osapublishing.org/boe/fulltext.cfm?uri=boe-9-2-873&id=381227), Spherical Mean [[3]](https://ieeexplore.ieee.org/document/9022571), DeepPhys [[4]](https://arxiv.org/abs/1805.07888) and POS [[5]](https://ieeexplore.ieee.org/document/7565547), have been tabulated in the file 'Results_Final_Main.csv'. 
 The python script 'HypoTest_Results_p.py' provides hypothesis test results (p-values) obtained for the hypothesis tests detailed in the paper. 
