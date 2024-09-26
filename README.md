@@ -16,13 +16,7 @@ In summary, the contributions of the work are:
 
 # Dataset
 
-The 'Data' folder contains the video data of subjects from India and Sierra Leone. As the participants have given permission for their de-indentified video data to be shared publicly, we generated 3 videos from the facial video of each subject. The 3 videos generated for each subject are described below and the corresponding regions (R1: Forehead, R2: Left Cheek, R3: Right Cheek) on the face are shown in the accompanying figure.
-
-1) Rectangular region of 60 x 30 pixels of the forehead 
-2) Rectangular region of 25 x 25 pixels of the left cheek (the left of the viewer)
-3) Rectangular region of 25 x 25 pixels of the right cheek (the right of the viewer)
-
-The ground truth mean heart rate for each video is provided in the respective '.csv' files contained in the 'Ground_Truth' folder. 
+The `Input_Videos` folder contains the video data utilized for the current study. The `Input_Photos` folder contains the subject full length images utilized for the current study. 
 
 ![alt text](https://github.com/AiPEX-Lab/rppg_biases/blob/main/Fig.jpg?raw=true)
 
